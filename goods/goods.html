@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" charset="utf-8"/>
+		<meta name="viewport" content= "width=device-width initial-scale=1 minimum-scale=1 maximum-scale=1"/>
+		<title></title>
+		<link rel="stylesheet" href="css/style.css"> 
+	    <script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+		<body>
+    <div id="mask"></div>
+    <!--<div id="login">
+        
+    </div>-->
+    <div class="register" id="register">
+			<h3>会员注册</h3>
+			<img src="img/关闭.png" id="login_close"/>
+		<table border="0" cellspacing="" cellpadding="" class="table">
+			
+			<tr><td><img class="image" id="one" src="img/步骤1-拷贝.png"/><span class="text">手机验证</span></td>
+			<td><hr/></td>
+			<td><img class="image" id="two" src="img/步骤2-拷贝.png"/><span class="text">资料填写</span></td>
+			<td><hr/></td>
+			<td><img class="image" id="three" src="img/步骤3.png"/><span class="text">完成注册</span></td></tr>
+		
+		</table>
+	
+		<div class="phone" id="phone_form">
+			
+			<table border="0" cellspacing="" cellpadding="" class="tab">
+				<div class="err" id="err" name="err" > 
+				
+			</div>
+				<tr class="phone_tr">
+					<td>
+					<span class="txt">
+						手机号
+					</span>
+					
+					<input   class="itxt" type="text" name="phone" id="phone" onBlur="checkPhone()" onkeyup="selece()" placeholder="请输入您的手机号">
+			<span class="shu">|</span>
+			<input type="button" value="获取验证码" class="getNO" onclick="settime(this);"></td>
+				</tr>
+			<tr class="phone_tr">
+				<td><span class="txt">
+                                          验证码
+				</span>
+				<input  class="itxt" type="text" name="pass" id="pass" onkeyup="check()" placeholder="请输入短信验证码">
+			</td></tr>
+			</table>
+			<div class="err1 err_yzm" id="err3"></div>
+			</div>
+				<div class="ziliao"  id="ziliao"  style="display: none;">
+			
+			<table border="0" cellspacing="" cellpadding="" class="tab">
+				<!--<div class="err" id="err" name="err" > 
+				请输入正确的手机号
+			</div>-->
+				<tr class="phone_tr">
+					<td>
+						<span id="" class="red">
+							*
+						</span>
+					<span class="txt">
+						姓名
+					</span>
+					
+					<input   class="itxt jianju" type="text" name="name" id="name" onkeyup="bixuan()" onblur="nonull()" placeholder="请输入您的姓名">
+			</tr>
+			<div class="err1 err_name" id="err1"></div>
+			<div class="err1 err_datetime" id="err2"></div>
+			
+			<tr class="phone_tr">
+				<td>
+					<span id="" class="red">
+							*
+						</span>
+						<span class="txt">
+                                          性别
+				</span>
+				<img class="image jj_left" onclick="sex(this)" id="nan" src="img/单选选中.png"/><span class="text jianju">男</span>
+				<img class="image jianju jj" onclick="sex(this)" id="nv" src="img/单选项默认.png"/><span class="text jianju">女</span>
+			</td></tr>
+			<tr class="phone_tr">
+				<td>
+					<span id="" class="red">
+							*
+						</span>
+						<span class="txt">
+                                          生日
+				</span>
+				<!--<div id="calend" class="calend">选择日期</div>-->
+				<input  class="calend itxt jianju" type="" name="datetime" readonly="readonly" id="datetime" oninput="nonull()"  placeholder="请输入您的生日">
+			</td></tr>
+			</table>
+			
+			</div>
+			<div class="finish_form" id="finish_form" style="display: none;">
+				<img src="img/注册成功@2x.png" class="finished"/>
+				<div class="finish_txt">
+					注册成功
+				</div>
+			</div>
+			<div class="">
+				<button class="next" id="next" disabled="disabled" onclick="tonext()">下一步</button>
+				<button class="next finish" id="next1" disabled="disabled" onclick="showsimple()">下一步</button>
+				<button class="isfinish finish" id="next2"  onclick="finish()">完成</button>
+				<!--<button class="" id="" onclick="tonext()">下一步</button>-->
+			</div>
+
+			<!--<input type="text" name="" id="" value="" style="height: 100px;border: none;" placeholder="sd"/>-->
+    </div>
+    <button class="zhuce" id="btn">会员注册</a>
+
+		<!--<button class="" id="" onclick="test()">ceshi</a>-->
+	</body>
+	   <script src="js/lCalendar.js"></script>
+
+        <link rel="stylesheet" href="css/lCalendar.css">
+<script src="laydate/laydate.js"></script> <!-- 改成你的路径 -->
+<script>
+////执行一个laydate实例
+var dt = ''
+//laydate.render({
+//elem: '#datetime' //指定元素
+//,btns: ['confirm']
+//,done: function(value, date){
+//  dt=value 
+//  nonull()
+//}
+//});
+  var calendar = new lCalendar();
+            calendar.init({
+                'trigger': '#datetime',
+                'type': 'date',
+//              'done': function(value, date){
+//  dt=value 
+//  nonull()
+//}
+            });
+</script>
+</html>
