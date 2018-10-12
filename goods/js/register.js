@@ -222,6 +222,7 @@ if(checkPhone()){
 	
 
 }
+var sexx="";
 //性别选择
 function sex(val) {
 	//	alert(val.id)
@@ -231,9 +232,11 @@ function sex(val) {
 	if(val.id == 'nv') {
 		document.getElementById("nan").src = "img/单选项默认.png";
 		document.getElementById("nv").src = "img/单选选中.png";
+		sexx="nv";
 	} else {
 		document.getElementById("nv").src = "img/单选项默认.png";
 		document.getElementById("nan").src = "img/单选选中.png";
+		sexx="nan";
 	}
 
 }
@@ -342,11 +345,14 @@ function showsimple(){               //创建主控制函数
   var us = document.getElementById("name").value;   //获取表单提交的值
   var dt = document.getElementById("datetime").value;
   var phone = document.getElementById("phone").value;
-  var se=document.getElementById("nan").src;
+//var se=document.getElementById("nan").src;
+//alert(se);
   var sex='男';
-  if(se=="img/单选项默认.png"){
+  if(sexx=="nv"){
+  	alert("123")
   	sex='女';
   }else{
+  	alert("nan")
   	sex='男';
   }
   if(us=="" && dt==""){         //判断表单提交的值不能为空
